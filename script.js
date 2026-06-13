@@ -19,7 +19,7 @@ async function getWeather() {
 
     } catch(err){
         console.log(err)
-        // alert('This city doesnt exist')
+        alert('This city doesnt exist')
     }
 }
 
@@ -64,11 +64,17 @@ result.innerHTML = `
 if (state.current.condition.text == 'Sunny' || state.current.condition.text == 'Partly Cloudy') {
     document.body.style.backgroundColor = 'lemonchiffon'
 }
-if (state.current.condition.text == 'Patchy rain nearby' || state.current.condition.text == 'Moderate or heavy rain shower') {
+else if (state.current.condition.text == 'Patchy rain nearby'|| state.current.condition.text == 'Moderate rain' || state.current.condition.text == 'Light rain') {
     document.body.style.backgroundColor = 'skyblue'
 }
-if (state.current.condition.text == 'Overcast' || state.current.condition.text == 'Mist') {
+else if (state.current.condition.text == 'Overcast' || state.current.condition.text == 'Mist' || state.current.condition.text == 'Fog') {
     document.body.style.backgroundColor = 'lightgrey'
+}
+else if (state.current.condition.text == 'Moderate or heavy rain shower' || state.current.condition.text == 'Moderate or heavy rain with thunder' || state.current.condition.text == 'Clear' ) {
+    document.body.style.backgroundColor = 'midnightblue'
+}
+else {
+    document.body.style.backgroundColor = 'lightgreen'
 }
 }
 

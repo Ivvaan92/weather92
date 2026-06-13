@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+main{
+  height: auto;
+}
+
 .container{
   display: flex;
   align-items: center;
@@ -10,7 +14,7 @@
   height: 70vh;
 }
 .result{
-  display: auto;
+  display: block;
   justify-items: center;
   justify-content: center;
 }
@@ -22,12 +26,39 @@
   border-radius: 20px;
   margin: 10px;
   padding: 10px;
-  height: 50%;
-  width: 25vw;
+  /* height: 50vh; */
+  height: auto;
+  max-height: 70vh;
+  width: auto;
   font-size: 1.8rem;
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 5px 0;
+  transition: 0.4s;
+}
+
+#button{
+  background-color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0 2rem;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+#locationFilter{
+  background-color: rgba(255, 255, 255, 0.322);
+    color: rgba(0, 0, 0, 0.493);
+    padding: 0 2rem;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+label{
+  color: rgba(0, 0, 0, 0.493);
 }
 
 h1{
@@ -42,17 +73,55 @@ h1{
   justify-content: center;
   border: 1px solid black;
   border-radius: 20px;
-  width: 40vw;
+  width: auto;
   box-shadow: 0 0 5px 0;
   background: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
 }
 
 #locationFilter, #button, label{
   font-size: 2rem;
-  background-color: transparent;
 }
 header{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.card:hover{
+  background-color: rgba(255, 255, 255, 0.452);
+}
+
+#searchForm:hover{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1080px){
+  #searchForm{
+    position: flex;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 800px){
+  .container{
+    display: block;
+    flex-direction: column;
+    margin: 20px;
+  }
+  .card{
+    width: 60vw;
+    height: auto;
+  }
+  #searchForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    width: auto;
+  }
+  #locationFilter{
+    width: 50vw;
+  }
 }
